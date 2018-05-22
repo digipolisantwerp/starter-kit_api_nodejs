@@ -1,0 +1,45 @@
+{
+  "name": "starter-kit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "nodemon src/index.js --exec babel-node",
+    "build": "npx babel src -d dist",
+    "serve": "node dist/index.js",
+    "lint": "eslint **/*.js",
+    "test": "NODE_ENV=test istanbul cover --dir ./coverage mocha -- -R spec -t 15000 --recursive --slow 2 --compilers js:babel-register",
+    "test-build": "NODE_ENV=build istanbul cover --dir ./coverage mocha -- -R spec -t 15000 --recursive --slow 2 --compilers js:babel-register"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "~6.26.0",
+    "babel-preset-env": "~1.6.1",
+    "babel-preset-stage-2": "~6.24.1",
+    "babel-register": "~6.26.0",
+    "eslint": "~4.19.1",
+    "eslint-config-airbnb-base": "~12.1.0",
+    "eslint-plugin-import": "~2.11.0",
+    "istanbul": "~0.4.5",
+    "mocha": "~5.1.1",
+    "nodemon": "~1.17.3",
+    "supertest": "~3.0.0"
+  },
+  "dependencies": {
+    "async": "~2.6.1",
+    "body-parser": "~1.18.2",
+    "digipolis-error": "~1.0.2",
+    "digipolis-response": "~1.0.1",
+    "dotenv": "~5.0.1",
+    "express": "~4.16.3",
+    "helmet": "~3.12.0",
+    "isomorphic-fetch": "~2.2.1",
+    "mongoose": "~4.13.11",
+    "uuid": "~3.2.1"
+  }
+}

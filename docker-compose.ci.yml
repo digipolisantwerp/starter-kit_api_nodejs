@@ -1,0 +1,17 @@
+version: '2'
+services:
+  app:
+    build: .
+    environment:
+      NODE_ENV: test
+    tty: true
+    ports:
+      - $PORT:$PORT
+    volumes:
+      - .:/app
+    links:
+      - mongo
+  mongo:
+    image: mongo:3.2
+    ports:
+      - "27017:27017"
