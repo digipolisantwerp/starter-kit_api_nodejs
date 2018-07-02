@@ -12,10 +12,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 
 ADD .npmrc /app
 ADD package.json /app
-RUN npm install nodemon -g
-RUN npm install mocha -g
-RUN npm install --loglevel info
-RUN npm install --only=dev
+RUN cd /app && npm install 
 
 ADD . /app
 RUN npm run build
