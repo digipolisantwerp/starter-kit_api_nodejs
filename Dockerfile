@@ -21,7 +21,8 @@ RUN npm run build
 # defaults to production, compose overrides this to development on build and run
 ARG NODE_ENV=production
 ENV NODE_ENV $NODE_ENV
-# default to port 4500 for node, and 5858 or 9229 for debug
+# default to port 80 for node, and 5858 or 9229 for debug
+ARG PORT=80
 ENV PORT $PORT
 EXPOSE $PORT 5858 9229
 
