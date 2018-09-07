@@ -1,9 +1,5 @@
-import dotenv from 'dotenv';
+import {} from 'dotenv/config';
 import app from './app';
-
-dotenv.config({
-  path: (process.env.NODE_ENV === 'test' ? '.env.test' : '.env'),
-});
 
 app.start((err) => {
   if (err) {
